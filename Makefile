@@ -82,6 +82,7 @@ clean:
 	find . -name '*.pye' -delete
 	rm -rf .tox
 	rm -f *.whl
+	find . -name '*~' -delete
 
 
 genie:

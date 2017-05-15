@@ -25,6 +25,10 @@ def readfile(filename):
 
 #requiers = readfile ('requirements.txt')
 requiers = """
+cloudmesh.cmd5
+requests
+httpsig
+pytz
 psutil
 pygments
 tox
