@@ -5,7 +5,7 @@ from cloudmesh.shell.command import PluginCommand
 from cloudmesh.common.console import Console
 from cloudmesh.comet.comet import Comet
 from cloudmesh.comet.cluster import Cluster
-from cloudmesh.common.hostlist import Parameter
+from cloudmesh.common.parameter import Parameter
 from cloudmesh.common.ConfigDict import ConfigDict
 import hostlist
 import os

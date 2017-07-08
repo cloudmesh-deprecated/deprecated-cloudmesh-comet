@@ -8,7 +8,7 @@ from cloudmesh.common.console import Console
 from cloudmesh.comet.comet import Comet
 from cloudmesh.common.Printer import Printer
 
-from cloudmesh.common.hostlist import Parameter
+from cloudmesh.common.parameter import Parameter
 import time
 from datetime import datetime
 import pytz
