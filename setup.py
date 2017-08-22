@@ -29,12 +29,12 @@ cloudmesh.cmd5
 requests
 httpsig
 pytz
-psutil
-pygments
-tox
-detox
-coverage
-flake8
+#psutil
+#pygments
+#tox
+#detox
+#coverage
+#flake8
 """.split("\n")
 
 # dependency_links = ['http://github.com/nicolaiarocci/eve.git@develop']
