@@ -41,34 +41,15 @@ setup:
 kill:
 	killall mongod
 
-mongo:
-	$(call terminal, $(MONGOD))
-
-eve:
-	$(call terminal, $(EVE))
-
 source:
 	python setup.py install; pip install -e .
 	cms help
 
-test:
-	$(call banner, "LIST SERVICE")
-	curl -s -i http://127.0.0.1:5000 
-	$(call banner, "LIST PROFILE")
-	@curl -s http://127.0.0.1:5000/profile  | jq
-	$(call banner, "LIST CLUSTER")
-	@curl -s http://127.0.0.1:5000/cluster  | jq
-	$(call banner, "LIST COMPUTER")
-	@curl -s http://127.0.0.1:5000/computer  | jq
-	$(call banner, "INSERT COMPUTER")
-	curl -d '{"name": "myCLuster",	"label": "c0","ip": "127.0.0.1","memoryGB": 16}' -H 'Content-Type: application/json'  http://127.0.0.1:5000/computer  
-	$(call banner, "LIST COMPUTER")
-	@curl -s http://127.0.0.1:5000/computer  | jq
+doc:
+	cd docs; make html
 
-
-nosetests:
-	nosetests -v --nocapture tests/test_mongo.py
-
+view:
+	open docs/build/html/index.html
 
 clean:
 	rm -rf *.zip
@@ -84,15 +65,6 @@ clean:
 	rm -f *.whl
 	find . -name '*~' -delete
 
-
-genie:
-	git clone https://github.com/drud/evegenie.git
-	cd evegenie; pip install -r requirements.txt
-
-json:
-	python evegenie/geneve.py sample.json
-	cp sample.settings.py $(ROOT_DIR)/settings.py
-	cat $(ROOT_DIR)/settings.py
 
 install:
 	cd ../common; python setup.py install; pip install .
