@@ -27,14 +27,9 @@ def readfile(filename):
 requiers = """
 cloudmesh.cmd5
 requests
+requests-toolbelt
 httpsig
 pytz
-#psutil
-#pygments
-#tox
-#detox
-#coverage
-#flake8
 """.split("\n")
 
 # dependency_links = ['http://github.com/nicolaiarocci/eve.git@develop']
@@ -43,7 +38,7 @@ version = readfile("VERSION")[0].strip()
 readme = readfile('README.rst')
 
 NAME = "cloudmesh.comet"
-DESCRIPTION = "A command called comet and foo for the cloudmesh shell"
+DESCRIPTION = "A Command Line Client and Shell to Interact with Comet VC"
 AUTHOR = "Gregor von Laszewski"
 AUTHOR_EMAIL = "laszewski@gmail.com"
 URL = "https://github.com/cloudmesh/cloudmesh.comet"

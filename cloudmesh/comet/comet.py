@@ -20,6 +20,8 @@ from httpsig.requests_auth import HTTPSignatureAuth
 from requests.auth import HTTPBasicAuth
 from requests.exceptions import ConnectionError
 
+from requests_toolbelt.multipart import encoder
+
 from cloudmesh.common.ConfigDict import ConfigDict
 from cloudmesh.common.Shell import Shell
 from cloudmesh.common.util import banner
@@ -639,12 +641,38 @@ class Comet(object):
         posturl = Comet.url("image")
         r = None
         md5 = Comet.md5(filepath)
-        with open(filepath, 'rb') as fh:
-            files = {'file': (filename, fh)}
-            print("File to be uploaded: %s" % filename)
-            r = Comet.post(posturl, files=files, md5=md5)
+
+        session = requests.Session()
+        print("ISO File to be uploaded as: %s" % filename)
+        with open(filepath, 'rb') as f:
+            print ("Uploading ...")
+            filedata = encoder.MultipartEncoder({
+                "file": (filename, f, "application/octet-stream"),
+                "composite": "NONE",
+            })
+            headers = {"Content-Type": filedata.content_type,
+                       "timestamp": str(int(time.time())),
+                       "nonce": Comet.get_nonce(),
+                       "X-Api-Key": Comet.api_key,
+                       "md5": md5}
+            r = session.post(posturl, auth=Comet.api_auth, headers=headers,
+                             data=filedata,
+                             allow_redirects=True,
+                             verify=True)
             if r is not None:
-                ret = r
+                if r.status_code == 204:
+                    ret = 'ISO File Successfully Uploaded'
+                else:
+                    ret = "ERROR: Unexpected Error Occurred During Upload"
+        return ret
+        # Consumes more RAM during upload even though
+        # requests claims this is also a 'stream' solution
+        #with open(filepath, 'rb') as fh:
+        #    files = {'file': (filename, fh)}
+        #    print("File to be uploaded: %s" % filename)
+        #    r = Comet.post(posturl, files=files, md5=md5)
+        #    if r is not None:
+        #        ret = r
         return ret
 
     @staticmethod
