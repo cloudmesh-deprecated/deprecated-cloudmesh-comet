@@ -42,7 +42,7 @@ kill:
 	killall mongod
 
 source:
-	python setup.py install; pip install -e .
+	pip install -e .
 	cms help
 
 doc:
@@ -67,9 +67,9 @@ clean:
 
 
 install:
-	cd ../common; python setup.py install; pip install .
-	cd ../cmd5; python setup.py install; pip install .
-	python setup.py install; pip install .
+	cd ../common; pip install .
+	cd ../cmd5; pip install .
+	pip install .
 
 ######################################################################
 # PYPI - Only to be exectued by Gregor
@@ -82,8 +82,8 @@ dist: twine clean
 	@echo "######################################"
 	@echo "# $(VERSION)"
 	@echo "######################################"
-	python setup.py sdist --formats=gztar,zip
-	python setup.py bdist
+	# python setup.py sdist --formats=gztar,zip
+	# python setup.py bdist
 	python setup.py bdist_wheel
 
 upload_test:
