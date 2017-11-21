@@ -1,20 +1,25 @@
-.. cloudmesh.comet documentation master file, created by
-   sphinx-quickstart on Thu Sep 28 13:56:03 2017.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Welcome to cloudmesh.comet's documentation!
-===========================================
+Cloudmesh client tool for Comet Virtual Cluster access
+======================================================
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
+* Cloudmesh Comet userguide: :ref:`comet_userguide`
+* Cloudmesh Comet CLI: :ref:`comet_command`
+* Comet CLI Refernce Card: :ref:`refcard_comet`
+* Comet CLI Man page: :ref:`man_comet`
 
+Tutorial
+--------
 
-Indices and tables
-==================
+PEARC17
+^^^^^^^
+* Using Cloudmesh Comet CLI: :ref:`comet_tut`
+* Deploy and run bigdata application on Comet VC: :ref:`comet_bigdata`
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+Userful linkes
+--------------
+* https://portal.xsede.org/sdsc-comet
+* http://www.sdsc.edu/support/user_guides/comet.html
+* Comet nucleus API Docs: https://comet-nucleus.sdsc.edu/nucleus/docs/
+

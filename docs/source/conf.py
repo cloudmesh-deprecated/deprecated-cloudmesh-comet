@@ -40,6 +40,8 @@ extensions = ['sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages']
 
+extensions += ['sphinx-prompt']
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -103,7 +105,8 @@ html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 
 # (Optional) Logo. Should be small enough to fit the navbar (ideally 24x24).
 # Path should be relative to the ``_static`` files directory.
-html_logo = "my_logo.png"
+#html_logo = "my_logo.png"
+html_logo = None
 
 # Theme options are theme-specific and customize the look and feel of a
 # theme further.
@@ -122,7 +125,6 @@ html_theme_options = {
     # Note the "1" or "True" value above as the third argument to indicate
     # an arbitrary url.
     'navbar_links': [
-        ("Cloudmesh", "https://cloudmesh.github.io/classes/index.html", True),
         ("CMD5", "https://github.com/cloudmesh/cloudmesh.cmd5/blob/master/README.rst", True),
     ],
 
