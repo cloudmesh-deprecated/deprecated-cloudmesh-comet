@@ -11,7 +11,7 @@ Command - comet::
        comet init
        comet active [ENDPOINT]
        comet ll [CLUSTERID] [--format=FORMAT] [--endpoint=ENDPOINT]
-       comet cluster [CLUSTERID]
+       comet cluster [--concise|--status] [CLUSTERID]
                      [--format=FORMAT]
                      [--sort=SORTKEY]
                      [--endpoint=ENDPOINT]
@@ -22,6 +22,7 @@ Command - comet::
                     [--endpoint=ENDPOINT]
        comet start CLUSTERID [--count=NUMNODES] [COMPUTENODEIDS]
                     [--allocation=ALLOCATION]
+                    [--reservation=RESERVATION]
                     [--walltime=WALLTIME]
                     [--endpoint=ENDPOINT]
        comet terminate COMPUTESETID [--endpoint=ENDPOINT]
@@ -40,6 +41,7 @@ Command - comet::
                     [--endpoint=ENDPOINT]
        comet iso detach CLUSTERID [COMPUTENODEIDS]
                     [--endpoint=ENDPOINT]
+       comet reservation (list|create|update|delete)
 
     Options:
         --endpoint=ENDPOINT     Specify the comet nucleus service
@@ -55,6 +57,7 @@ Command - comet::
                                 that are available to boot as a computeset
         --allocation=ALLOCATION     Allocation to charge when power on
                                     node(s)
+        --reservation=RESERVATION   Submit the request to an existing reservation
         --walltime=WALLTIME     Walltime requested for the node(s).
                                 Walltime could be an integer value followed
                                 by a unit (m, h, d, w, for minute, hour, day,
@@ -64,6 +67,8 @@ Command - comet::
         --state=COMPUTESESTATE  List only computeset with the specified state.
                                 The state could be submitted, running, completed
         --link                  Whether to open the console url or just show the link
+        --concise               Concise table view for cluster info
+        --status                Cluster table view displays only those columns showing state of nodes
 
     Arguments:
         ENDPOINT        Service endpoint based on the yaml config file.
