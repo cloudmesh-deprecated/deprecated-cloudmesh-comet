@@ -51,6 +51,9 @@ doc:
 view:
 	open docs/build/html/index.html
 
+publish:
+	ghp-import -n -p docs/build/html
+
 clean:
 	rm -rf *.zip
 	rm -rf *.egg-info
