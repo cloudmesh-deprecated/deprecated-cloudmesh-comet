@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Comet Big Data Tutorial &#8212; cloudmesh.comet 1.4.3 documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.4.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          cloudmesh.comet</a>
+        <span class="navbar-text navbar-version pull-left"><b>1.4.3</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://github.com/cloudmesh/cloudmesh.cmd5/blob/master/README.rst">CMD5</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Comet Big Data Tutorial</a><ul>
+<li><a class="reference internal" href="#status-of-this-tutorial">Status of this Tutorial</a></li>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#preparation">Preparation</a></li>
+<li><a class="reference internal" href="#sanity-check">Sanity Check</a></li>
+<li><a class="reference internal" href="#deploy-the-stack">Deploy the Stack</a></li>
+<li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#word-count">Word Count</a></li>
+<li><a class="reference internal" href="#what-s-next">What’s next?</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../../_sources/tutorials/pearc17/comet_bigdata.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="comet-big-data-tutorial">
+<span id="comet-bigdata"></span><h1>Comet Big Data Tutorial<a class="headerlink" href="#comet-big-data-tutorial" title="Permalink to this headline">¶</a></h1>
+<div class="sidebar">
+<p class="first sidebar-title">Page Contents</p>
+<div class="contents local last topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#status-of-this-tutorial" id="id1">Status of this Tutorial</a></li>
+<li><a class="reference internal" href="#overview" id="id2">Overview</a></li>
+<li><a class="reference internal" href="#requirements" id="id3">Requirements</a></li>
+<li><a class="reference internal" href="#preparation" id="id4">Preparation</a></li>
+<li><a class="reference internal" href="#sanity-check" id="id5">Sanity Check</a></li>
+<li><a class="reference internal" href="#deploy-the-stack" id="id6">Deploy the Stack</a></li>
+<li><a class="reference internal" href="#usage" id="id7">Usage</a></li>
+<li><a class="reference internal" href="#word-count" id="id8">Word Count</a></li>
+<li><a class="reference internal" href="#what-s-next" id="id9">What’s next?</a></li>
+</ul>
+</div>
+</div>
+<p><strong>Goal</strong>: Deploy an analytics cluster and run spark examples.</p>
+<p><strong>Time</strong>: ~ 15 min</p>
+<div class="section" id="status-of-this-tutorial">
+<h2><a class="toc-backref" href="#id1">Status of this Tutorial</a><a class="headerlink" href="#status-of-this-tutorial" title="Permalink to this headline">¶</a></h2>
+<p>Released for PEARC17 Comet VC Tutorial</p>
+</div>
+<div class="section" id="overview">
+<h2><a class="toc-backref" href="#id2">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>In this tutorial you will deploy an analytics stack consisting of
+Hadoop and Spark and run some toy analyses on the cluster.</p>
+</div>
+<div class="section" id="requirements">
+<h2><a class="toc-backref" href="#id3">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Basic knowledge of git, shell scripting, and Python.</li>
+<li>A Comet cluster<ul>
+<li>ip addresses of the nodes</li>
+<li>ssh-reachable user with admin privileges</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This tutorial used <cite>vct01</cite> as an example. Please change to your cluster name.</p>
+</div>
+</div>
+<div class="section" id="preparation">
+<h2><a class="toc-backref" href="#id4">Preparation</a><a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
+<p>On your VC front-end node clone the Big Data Stack repository:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>FE $ git clone --recursive --branch pearc17 git://github.com/futuresystems/big-data-stack
+FE $ cd big-data-stack
+</pre></div>
+</div>
+<p>Next create a virtualenvironment and install dependencies:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>FE $ virtualenv ~/BDS
+FE $ source ~/BDS/bin/activate
+(BDS) FE $ pip install -r requirements.txt
+</pre></div>
+</div>
+<p>The proper internal network interface has been set for this tutorial.
+For general case, you may need to configure ansible to use the internal
+network interface.
+Do so by setting the <code class="docutils literal"><span class="pre">bds_internal_iface</span></code> to <code class="docutils literal"><span class="pre">ens3</span></code> in <code class="docutils literal"><span class="pre">group_vars/all.yml</span></code></p>
+<p>The ansible remote_user has been set properly for this tutorial assuming you
+followed all the previous steps to setup the VC. For general use, please make
+sure to configure the authentication. Edit <code class="docutils literal"><span class="pre">ansible.cfg</span></code>
+and ensure the following are set in the <code class="docutils literal"><span class="pre">[defaults]</span></code> section:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">remote_user=YOUR_COMPUTE_USERNAME</span></code></li>
+<li><code class="docutils literal"><span class="pre">become_ask_pass=True</span></code></li>
+</ul>
+<p>Finally, generate the ansible inventory file using your cluster IP
+addresses. Note, your IP addresses may be different.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>(BDS) FE $ python mk-inventory -n bds- 10.0.0.1 10.0.0.2 &gt;inventory.txt
+</pre></div>
+</div>
+</div>
+<div class="section" id="sanity-check">
+<h2><a class="toc-backref" href="#id5">Sanity Check</a><a class="headerlink" href="#sanity-check" title="Permalink to this headline">¶</a></h2>
+<p>At this point you should be good to go, but make sure that Ansible is
+correctly configured by pinging the cluster.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>(BDS) FE $ ansible all -m ping
+bds-0 | SUCCESS =&gt; {
+  &quot;changed&quot;: false,
+  &quot;ping&quot;: &quot;pong&quot;
+}
+bds-1 | SUCCESS =&gt; {
+  &quot;changed&quot;: false,
+  &quot;ping&quot;: &quot;pong&quot;
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="deploy-the-stack">
+<h2><a class="toc-backref" href="#id6">Deploy the Stack</a><a class="headerlink" href="#deploy-the-stack" title="Permalink to this headline">¶</a></h2>
+<p>Once you’ve prepared your head node and generated the inventory you
+can deploy Hadoop, Spark, and optionally other addons. The addons are
+available in the <code class="docutils literal"><span class="pre">addons</span></code> directory, and include packages such as
+Apache Drill, HBase, and others. For this tutorial we will only need
+Spark.</p>
+<p>The following command will deploy Hadoop and Spark using Ansible. This
+will take several minutes.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>(BDS) FE $ ansible-playbook -K pearc17.yml
+</pre></div>
+</div>
+</div>
+<div class="section" id="usage">
+<h2><a class="toc-backref" href="#id7">Usage</a><a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>Once the stack has been deployed you may log in to the first address
+you passed to <code class="docutils literal"><span class="pre">mk-inventory</span></code> and switch to the <code class="docutils literal"><span class="pre">hadoop</span></code> user.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>(BDS) FE $ ssh vm-vct01-00
+comet@vm-vct01-00 $ sudo su - hadoop
+hadoop@vm-vct01-00 $
+</pre></div>
+</div>
+</div>
+<div class="section" id="word-count">
+<h2><a class="toc-backref" href="#id8">Word Count</a><a class="headerlink" href="#word-count" title="Permalink to this headline">¶</a></h2>
+<p>You can download the complete works for Shakespeare and upload it to
+HDFS:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>hadoop@vm-vct01-00 $ wget https://raw.githubusercontent.com/cloudmesh/cloudmesh.comet.vcdeploy/master/examples/shakespeare.txt
+hadoop@vm-vct01-00 $ hadoop fs -put shakespeare.txt /
+</pre></div>
+</div>
+<p>Next, you can use the following program (adapted from the <a class="reference external" href="https://spark.apache.org/examples.html">Spark
+website</a>) to analyze
+Shakespeare’s works. The analysis consists of the following steps:</p>
+<ol class="arabic simple">
+<li>split the text into words</li>
+<li>reduce by counting each words</li>
+<li>sort the result in descending order</li>
+<li>save to results on HDFS</li>
+</ol>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">SparkContext</span>
+
+<span class="n">sc</span> <span class="o">=</span> <span class="n">SparkContext</span><span class="p">()</span>
+
+<span class="n">txt</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">textFile</span><span class="p">(</span><span class="s1">&#39;hdfs:///shakespeare.txt&#39;</span><span class="p">)</span>
+<span class="n">counts</span> <span class="o">=</span> <span class="n">txt</span><span class="o">.</span><span class="n">flatMap</span><span class="p">(</span><span class="k">lambda</span> <span class="n">line</span><span class="p">:</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">))</span> \
+            <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">word</span><span class="p">:</span> <span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> \
+            <span class="o">.</span><span class="n">reduceByKey</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> \
+            <span class="o">.</span><span class="n">sortBy</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">counts</span><span class="o">.</span><span class="n">saveAsTextFile</span><span class="p">(</span><span class="s1">&#39;hdfs:///shakespeare-wordcount.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can download this example by running this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>hadoop@vm-vct01-00 $ wget https://raw.githubusercontent.com/cloudmesh/cloudmesh.comet.vcdeploy/master/examples/spark-shakespeare.py
+</pre></div>
+</div>
+<p>You can run the analysis locally with the following invocation:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>hadoop@vm-vct01-00 $ spark-submit spark-shakespeare.py
+</pre></div>
+</div>
+<p>Or you can submit to the cluster by invoking:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>hadoop@vm-vct01-00 $ spark-submit --master yarn --deploy-mode cluster spark-shakespeare.py
+</pre></div>
+</div>
+<p><strong>Make sure to cleanup</strong> before rerunning otherwise the task will fail:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>hadoop@vm-vct01-00 $ hadoop fs -rm -r /shakespeare-wordcount.txt
+</pre></div>
+</div>
+<p>You can then view the top ten words by:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>hadoop@vm-vct01-00 $ hadoop fs -cat /shakespeare-wordcount.txt/part-00000 | head
+</pre></div>
+</div>
+</div>
+<div class="section" id="what-s-next">
+<h2><a class="toc-backref" href="#id9">What’s next?</a><a class="headerlink" href="#what-s-next" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Try with a larger data set and compare the performance between local run and cluster run</li>
+<li>Try with more sophisticated textual analytics</li>
+<li>Deploy other components. This tutorial is tailored specially for the PEARC17 Comet VC tutorial to minimize user intervention and customization while showing the essence of the big data stack deployment. For the general use, please refer to the <a class="reference external" href="https://github.com/futuresystems/big-data-stack">main repo</a>.</li>
+</ul>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Gregor von Laszewski, Fugang Wang.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Commands &#8212; cloudmesh.comet 1.4.3 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.4.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          cloudmesh.comet</a>
+        <span class="navbar-text navbar-version pull-left"><b>1.4.3</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://github.com/cloudmesh/cloudmesh.cmd5/blob/master/README.rst">CMD5</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Commands</a><ul>
+<li><a class="reference internal" href="#comet">comet</a></li>
+<li><a class="reference internal" href="#h">h</a></li>
+<li><a class="reference internal" href="#help">help</a></li>
+<li><a class="reference internal" href="#history">history</a></li>
+<li><a class="reference internal" href="#q">q</a></li>
+<li><a class="reference internal" href="#quit">quit</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="_sources/man.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="commands">
+<span id="man-comet"></span><h1>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="comet">
+<h2>comet<a class="headerlink" href="#comet" title="Permalink to this headline">¶</a></h2>
+<p>Command - comet:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>
+   <span class="n">comet</span> <span class="n">init</span>
+   <span class="n">comet</span> <span class="n">active</span> <span class="p">[</span><span class="n">ENDPOINT</span><span class="p">]</span>
+   <span class="n">comet</span> <span class="n">ll</span> <span class="p">[</span><span class="n">CLUSTERID</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">format</span><span class="o">=</span><span class="n">FORMAT</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">endpoint</span><span class="o">=</span><span class="n">ENDPOINT</span><span class="p">]</span>
+   <span class="n">comet</span> <span class="n">cluster</span> <span class="p">[</span><span class="n">CLUSTERID</span><span class="p">]</span>
+                 <span class="p">[</span><span class="o">--</span><span class="nb">format</span><span class="o">=</span><span class="n">FORMAT</span><span class="p">]</span>
+                 <span class="p">[</span><span class="o">--</span><span class="n">sort</span><span class="o">=</span><span class="n">SORTKEY</span><span class="p">]</span>
+                 <span class="p">[</span><span class="o">--</span><span class="n">endpoint</span><span class="o">=</span><span class="n">ENDPOINT</span><span class="p">]</span>
+   <span class="n">comet</span> <span class="n">computeset</span> <span class="p">[</span><span class="n">COMPUTESETID</span><span class="p">]</span>
+                <span class="p">[</span><span class="o">--</span><span class="n">allocation</span><span class="o">=</span><span class="n">ALLOCATION</span><span class="p">]</span>
+                <span class="p">[</span><span class="o">--</span><span class="n">cluster</span><span class="o">=</span><span class="n">CLUSTERID</span><span class="p">]</span>
+                <span class="p">[</span><span class="o">--</span><span class="n">state</span><span class="o">=</span><span class="n">COMPUTESESTATE</span><span class="p">]</span>
+                <span class="p">[</span><span class="o">--</span><span class="n">endpoint</span><span class="o">=</span><span class="n">ENDPOINT</span><span class="p">]</span>
+   <span class="n">comet</span> <span class="n">start</span> <span class="n">CLUSTERID</span> <span class="p">[</span><span class="o">--</span><span class="n">count</span><span class="o">=</span><span class="n">NUMNODES</span><span class="p">]</span> <span class="p">[</span><span class="n">COMPUTENODEIDS</span><span class="p">]</span>
+                <span class="p">[</span><span class="o">--</span><span class="n">allocation</span><span class="o">=</span><span class="n">ALLOCATION</span><span class="p">]</span>
+                <span class="p">[</span><span class="o">--</span><span class="n">walltime</span><span class="o">=</span><span class="n">WALLTIME</span><span class="p">]</span>
+                <span class="p">[</span><span class="o">--</span><span class="n">endpoint</span><span class="o">=</span><span class="n">ENDPOINT</span><span class="p">]</span>
+   <span class="n">comet</span> <span class="n">terminate</span> <span class="n">COMPUTESETID</span> <span class="p">[</span><span class="o">--</span><span class="n">endpoint</span><span class="o">=</span><span class="n">ENDPOINT</span><span class="p">]</span>
+   <span class="n">comet</span> <span class="n">power</span> <span class="p">(</span><span class="n">on</span><span class="o">|</span><span class="n">off</span><span class="o">|</span><span class="n">reboot</span><span class="o">|</span><span class="n">reset</span><span class="o">|</span><span class="n">shutdown</span><span class="p">)</span> <span class="n">CLUSTERID</span> <span class="p">[</span><span class="n">NODESPARAM</span><span class="p">]</span>
+                <span class="p">[</span><span class="o">--</span><span class="n">endpoint</span><span class="o">=</span><span class="n">ENDPOINT</span><span class="p">]</span>
+   <span class="n">comet</span> <span class="n">console</span> <span class="p">[</span><span class="o">--</span><span class="n">link</span><span class="p">]</span> <span class="n">CLUSTERID</span> <span class="p">[</span><span class="n">COMPUTENODEID</span><span class="p">]</span>
+                <span class="p">[</span><span class="o">--</span><span class="n">endpoint</span><span class="o">=</span><span class="n">ENDPOINT</span><span class="p">]</span>
+   <span class="n">comet</span> <span class="n">node</span> <span class="n">info</span> <span class="n">CLUSTERID</span> <span class="p">[</span><span class="n">COMPUTENODEID</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">format</span><span class="o">=</span><span class="n">FORMAT</span><span class="p">]</span>
+                <span class="p">[</span><span class="o">--</span><span class="n">endpoint</span><span class="o">=</span><span class="n">ENDPOINT</span><span class="p">]</span>
+   <span class="n">comet</span> <span class="n">node</span> <span class="n">rename</span> <span class="n">CLUSTERID</span> <span class="n">OLDNAMES</span> <span class="n">NEWNAMES</span>
+                <span class="p">[</span><span class="o">--</span><span class="n">endpoint</span><span class="o">=</span><span class="n">ENDPOINT</span><span class="p">]</span>
+   <span class="n">comet</span> <span class="n">iso</span> <span class="nb">list</span> <span class="p">[</span><span class="o">--</span><span class="n">endpoint</span><span class="o">=</span><span class="n">ENDPOINT</span><span class="p">]</span>
+   <span class="n">comet</span> <span class="n">iso</span> <span class="n">upload</span> <span class="p">[</span><span class="o">--</span><span class="n">isoname</span><span class="o">=</span><span class="n">ISONAME</span><span class="p">]</span> <span class="n">PATHISOFILE</span>
+                <span class="p">[</span><span class="o">--</span><span class="n">endpoint</span><span class="o">=</span><span class="n">ENDPOINT</span><span class="p">]</span>
+   <span class="n">comet</span> <span class="n">iso</span> <span class="n">attach</span> <span class="n">ISOIDNAME</span> <span class="n">CLUSTERID</span> <span class="p">[</span><span class="n">COMPUTENODEIDS</span><span class="p">]</span>
+                <span class="p">[</span><span class="o">--</span><span class="n">endpoint</span><span class="o">=</span><span class="n">ENDPOINT</span><span class="p">]</span>
+   <span class="n">comet</span> <span class="n">iso</span> <span class="n">detach</span> <span class="n">CLUSTERID</span> <span class="p">[</span><span class="n">COMPUTENODEIDS</span><span class="p">]</span>
+                <span class="p">[</span><span class="o">--</span><span class="n">endpoint</span><span class="o">=</span><span class="n">ENDPOINT</span><span class="p">]</span>
+
+<span class="n">Options</span><span class="p">:</span>
+    <span class="o">--</span><span class="n">endpoint</span><span class="o">=</span><span class="n">ENDPOINT</span>     <span class="n">Specify</span> <span class="n">the</span> <span class="n">comet</span> <span class="n">nucleus</span> <span class="n">service</span>
+                            <span class="n">endpoint</span> <span class="n">to</span> <span class="n">work</span> <span class="k">with</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="n">dev</span>
+                            <span class="ow">or</span> <span class="n">production</span>
+    <span class="o">--</span><span class="nb">format</span><span class="o">=</span><span class="n">FORMAT</span>         <span class="n">Format</span> <span class="ow">is</span> <span class="n">either</span> <span class="n">table</span><span class="p">,</span> <span class="n">json</span><span class="p">,</span> <span class="n">yaml</span><span class="p">,</span>
+                            <span class="n">csv</span><span class="p">,</span> <span class="n">rest</span>
+                            <span class="p">[</span><span class="n">default</span><span class="p">:</span> <span class="n">table</span><span class="p">]</span>
+    <span class="o">--</span><span class="n">sort</span><span class="o">=</span><span class="n">SORTKEY</span>          <span class="n">Sorting</span> <span class="n">key</span> <span class="k">for</span> <span class="n">the</span> <span class="n">table</span> <span class="n">view</span>
+    <span class="o">--</span><span class="n">count</span><span class="o">=</span><span class="n">NUMNODES</span>        <span class="n">Number</span> <span class="n">of</span> <span class="n">nodes</span> <span class="n">to</span> <span class="n">be</span> <span class="n">powered</span> <span class="n">on</span><span class="o">.</span>
+                            <span class="n">When</span> <span class="n">this</span> <span class="n">option</span> <span class="ow">is</span> <span class="n">used</span><span class="p">,</span> <span class="n">the</span> <span class="n">comet</span> <span class="n">system</span>
+                            <span class="n">will</span> <span class="n">find</span> <span class="n">a</span> <span class="n">NUMNODES</span> <span class="n">number</span> <span class="n">of</span> <span class="n">arbitrary</span> <span class="n">nodes</span>
+                            <span class="n">that</span> <span class="n">are</span> <span class="n">available</span> <span class="n">to</span> <span class="n">boot</span> <span class="k">as</span> <span class="n">a</span> <span class="n">computeset</span>
+    <span class="o">--</span><span class="n">allocation</span><span class="o">=</span><span class="n">ALLOCATION</span>     <span class="n">Allocation</span> <span class="n">to</span> <span class="n">charge</span> <span class="n">when</span> <span class="n">power</span> <span class="n">on</span>
+                                <span class="n">node</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="o">--</span><span class="n">walltime</span><span class="o">=</span><span class="n">WALLTIME</span>     <span class="n">Walltime</span> <span class="n">requested</span> <span class="k">for</span> <span class="n">the</span> <span class="n">node</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">.</span>
+                            <span class="n">Walltime</span> <span class="n">could</span> <span class="n">be</span> <span class="n">an</span> <span class="n">integer</span> <span class="n">value</span> <span class="n">followed</span>
+                            <span class="n">by</span> <span class="n">a</span> <span class="n">unit</span> <span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="k">for</span> <span class="n">minute</span><span class="p">,</span> <span class="n">hour</span><span class="p">,</span> <span class="n">day</span><span class="p">,</span>
+                            <span class="ow">and</span> <span class="n">week</span><span class="p">,</span> <span class="n">respectively</span><span class="p">)</span><span class="o">.</span> <span class="n">E</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="mi">3</span><span class="n">h</span><span class="p">,</span> <span class="mi">2</span><span class="n">d</span>
+    <span class="o">--</span><span class="n">isoname</span><span class="o">=</span><span class="n">ISONAME</span>       <span class="n">Name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">iso</span> <span class="n">image</span> <span class="n">after</span> <span class="n">being</span> <span class="n">stored</span> <span class="n">remotely</span><span class="o">.</span>
+                            <span class="n">If</span> <span class="ow">not</span> <span class="n">specified</span><span class="p">,</span> <span class="n">use</span> <span class="n">the</span> <span class="n">original</span> <span class="n">filename</span>
+    <span class="o">--</span><span class="n">state</span><span class="o">=</span><span class="n">COMPUTESESTATE</span>  <span class="n">List</span> <span class="n">only</span> <span class="n">computeset</span> <span class="k">with</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">state</span><span class="o">.</span>
+                            <span class="n">The</span> <span class="n">state</span> <span class="n">could</span> <span class="n">be</span> <span class="n">submitted</span><span class="p">,</span> <span class="n">running</span><span class="p">,</span> <span class="n">completed</span>
+    <span class="o">--</span><span class="n">link</span>                  <span class="n">Whether</span> <span class="n">to</span> <span class="nb">open</span> <span class="n">the</span> <span class="n">console</span> <span class="n">url</span> <span class="ow">or</span> <span class="n">just</span> <span class="n">show</span> <span class="n">the</span> <span class="n">link</span>
+
+<span class="n">Arguments</span><span class="p">:</span>
+    <span class="n">ENDPOINT</span>        <span class="n">Service</span> <span class="n">endpoint</span> <span class="n">based</span> <span class="n">on</span> <span class="n">the</span> <span class="n">yaml</span> <span class="n">config</span> <span class="n">file</span><span class="o">.</span>
+                    <span class="n">By</span> <span class="n">default</span> <span class="n">it</span><span class="s1">&#39;s either dev or production.</span>
+    <span class="n">CLUSTERID</span>       <span class="n">The</span> <span class="n">assigned</span> <span class="n">name</span> <span class="n">of</span> <span class="n">a</span> <span class="n">cluster</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">vc1</span>
+    <span class="n">COMPUTESETID</span>    <span class="n">An</span> <span class="n">integer</span> <span class="n">identifier</span> <span class="n">assigned</span> <span class="n">to</span> <span class="n">a</span> <span class="n">computeset</span>
+    <span class="n">COMPUTENODEID</span>   <span class="n">A</span> <span class="n">compute</span> <span class="n">node</span> <span class="n">name</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="n">vm</span><span class="o">-</span><span class="n">vc1</span><span class="o">-</span><span class="mi">0</span>
+                    <span class="n">If</span> <span class="ow">not</span> <span class="n">provided</span><span class="p">,</span> <span class="n">the</span> <span class="n">requested</span> <span class="n">action</span> <span class="n">will</span> <span class="n">be</span> <span class="n">taken</span>
+                    <span class="n">on</span> <span class="n">the</span> <span class="n">frontend</span> <span class="n">node</span> <span class="n">of</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">cluster</span>
+    <span class="n">COMPUTENODEIDS</span>  <span class="n">A</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">compute</span> <span class="n">node</span> <span class="n">names</span> <span class="ow">in</span> <span class="n">hostlist</span> <span class="nb">format</span><span class="p">,</span>
+                    <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="n">vm</span><span class="o">-</span><span class="n">vc1</span><span class="o">-</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+                    <span class="n">One</span> <span class="n">single</span> <span class="n">node</span> <span class="ow">is</span> <span class="n">also</span> <span class="n">acceptable</span><span class="p">:</span> <span class="n">vm</span><span class="o">-</span><span class="n">vc1</span><span class="o">-</span><span class="mi">0</span>
+                    <span class="n">If</span> <span class="ow">not</span> <span class="n">provided</span><span class="p">,</span> <span class="n">the</span> <span class="n">requested</span> <span class="n">action</span> <span class="n">will</span> <span class="n">be</span> <span class="n">taken</span>
+                    <span class="n">on</span> <span class="n">the</span> <span class="n">frontend</span> <span class="n">node</span> <span class="n">of</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">cluster</span>
+    <span class="n">NODESPARAM</span>      <span class="n">Specifying</span> <span class="n">the</span> <span class="n">node</span><span class="o">/</span><span class="n">nodes</span><span class="o">/</span><span class="n">computeset</span> <span class="n">to</span> <span class="n">act</span> <span class="n">on</span><span class="o">.</span>
+                    <span class="n">In</span> <span class="n">case</span> <span class="n">of</span> <span class="n">integer</span><span class="p">,</span> <span class="n">will</span> <span class="n">be</span> <span class="n">intepreted</span> <span class="k">as</span> <span class="n">a</span> <span class="n">computesetid</span><span class="p">;</span>
+                    <span class="ow">in</span> <span class="n">case</span> <span class="n">of</span> <span class="n">a</span> <span class="n">hostlist</span> <span class="nb">format</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="n">vm</span><span class="o">-</span><span class="n">vc1</span><span class="o">-</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">3</span><span class="p">],</span> <span class="n">a</span> <span class="n">group</span>
+                    <span class="n">of</span> <span class="n">nodes</span><span class="p">;</span> <span class="ow">or</span> <span class="n">a</span> <span class="n">single</span> <span class="n">host</span> <span class="ow">is</span> <span class="n">also</span> <span class="n">acceptable</span><span class="p">,</span>
+                    <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="n">vm</span><span class="o">-</span><span class="n">vc1</span><span class="o">-</span><span class="mi">0</span>
+    <span class="n">ISONAME</span>         <span class="n">Name</span> <span class="n">of</span> <span class="n">an</span> <span class="n">iso</span> <span class="n">image</span> <span class="n">at</span> <span class="n">remote</span> <span class="n">server</span>
+    <span class="n">ISOIDNAME</span>       <span class="n">Index</span> <span class="ow">or</span> <span class="n">name</span> <span class="n">of</span> <span class="n">an</span> <span class="n">iso</span> <span class="n">image</span> <span class="n">at</span> <span class="n">the</span> <span class="n">remote</span> <span class="n">server</span><span class="o">.</span>
+                    <span class="n">The</span> <span class="n">index</span> <span class="ow">is</span> <span class="n">based</span> <span class="n">on</span> <span class="n">the</span> <span class="nb">list</span> <span class="kn">from</span> <span class="s1">&#39;comet iso list&#39;</span><span class="o">.</span>
+    <span class="n">PATHISOFILE</span>     <span class="n">The</span> <span class="n">full</span> <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">iso</span> <span class="n">image</span> <span class="n">file</span> <span class="n">to</span> <span class="n">be</span> <span class="n">uploaded</span>
+    <span class="n">OLDNAMES</span>        <span class="n">The</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">current</span> <span class="n">node</span> <span class="n">names</span> <span class="n">to</span> <span class="n">be</span> <span class="n">renamed</span><span class="p">,</span> <span class="ow">in</span> <span class="n">hostlist</span>
+                    <span class="nb">format</span><span class="o">.</span> <span class="n">A</span> <span class="n">single</span> <span class="n">host</span> <span class="ow">is</span> <span class="n">also</span> <span class="n">acceptable</span><span class="o">.</span>
+    <span class="n">NEWNAMES</span>        <span class="n">The</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">new</span> <span class="n">names</span> <span class="n">to</span> <span class="n">rename</span> <span class="n">to</span><span class="p">,</span> <span class="ow">in</span> <span class="n">hostlist</span> <span class="nb">format</span><span class="o">.</span>
+                    <span class="n">A</span> <span class="n">single</span> <span class="n">host</span> <span class="ow">is</span> <span class="n">also</span> <span class="n">acceptable</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="h">
+<h2>h<a class="headerlink" href="#h" title="Permalink to this headline">¶</a></h2>
+<p>Command - h:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>
+    <span class="n">history</span>
+    <span class="n">history</span> <span class="nb">list</span>
+    <span class="n">history</span> <span class="n">last</span>
+    <span class="n">history</span> <span class="n">ID</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="help">
+<h2>help<a class="headerlink" href="#help" title="Permalink to this headline">¶</a></h2>
+<p>Command - help:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>
+    <span class="n">help</span>
+    <span class="n">help</span> <span class="n">COMMAND</span>
+
+<span class="n">Description</span><span class="p">:</span>
+    <span class="n">List</span> <span class="n">available</span> <span class="n">commands</span> <span class="k">with</span> <span class="s2">&quot;help&quot;</span> <span class="ow">or</span> <span class="n">detailed</span> <span class="n">help</span> <span class="k">with</span>
+    <span class="s2">&quot;help COMMAND&quot;</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="history">
+<h2>history<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
+<p>Command - history:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>
+    <span class="n">history</span>
+    <span class="n">history</span> <span class="nb">list</span>
+    <span class="n">history</span> <span class="n">last</span>
+    <span class="n">history</span> <span class="n">ID</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="q">
+<h2>q<a class="headerlink" href="#q" title="Permalink to this headline">¶</a></h2>
+<p>Command - q:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>
+    <span class="n">quit</span>
+
+<span class="n">Description</span><span class="p">:</span>
+    <span class="n">Action</span> <span class="n">to</span> <span class="n">be</span> <span class="n">performed</span> <span class="n">whne</span> <span class="n">quit</span> <span class="ow">is</span> <span class="n">typed</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="quit">
+<h2>quit<a class="headerlink" href="#quit" title="Permalink to this headline">¶</a></h2>
+<p>Command - quit:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>
+    <span class="n">quit</span>
+
+<span class="n">Description</span><span class="p">:</span>
+    <span class="n">Action</span> <span class="n">to</span> <span class="n">be</span> <span class="n">performed</span> <span class="n">whne</span> <span class="n">quit</span> <span class="ow">is</span> <span class="n">typed</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Gregor von Laszewski, Fugang Wang.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Cloudmesh Comet CLI &#8212; cloudmesh.comet 1.4.3 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.4.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          cloudmesh.comet</a>
+        <span class="navbar-text navbar-version pull-left"><b>1.4.3</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://github.com/cloudmesh/cloudmesh.cmd5/blob/master/README.rst">CMD5</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Cloudmesh Comet CLI</a><ul>
+<li><a class="reference internal" href="#teminology">Teminology</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#configuration">Configuration</a></li>
+<li><a class="reference internal" href="#commands">Commands</a><ul>
+<li><a class="reference internal" href="#getting-information-of-your-cluster-s-nodes-computesets-etc">Getting information of your cluster(s); nodes; computesets; etc.</a></li>
+<li><a class="reference internal" href="#power-management-of-frontend-node">Power management of frontend node:</a></li>
+<li><a class="reference internal" href="#resource-allocation-and-tear-down">Resource allocation and tear down:</a></li>
+<li><a class="reference internal" href="#power-management-of-compute-nodes">Power management of compute nodes:</a></li>
+<li><a class="reference internal" href="#getting-console-access">Getting Console access</a></li>
+<li><a class="reference internal" href="#system-image-management">System image management</a></li>
+<li><a class="reference internal" href="#other-commands">Other commands:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="_sources/command_comet.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="cloudmesh-comet-cli">
+<span id="comet-command"></span><h1>Cloudmesh Comet CLI<a class="headerlink" href="#cloudmesh-comet-cli" title="Permalink to this headline">¶</a></h1>
+<div class="sidebar">
+<p class="first sidebar-title">Page Contents</p>
+<div class="contents local last topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#teminology" id="id1">Teminology</a></li>
+<li><a class="reference internal" href="#installation" id="id2">Installation</a></li>
+<li><a class="reference internal" href="#configuration" id="id3">Configuration</a></li>
+<li><a class="reference internal" href="#commands" id="id4">Commands</a><ul>
+<li><a class="reference internal" href="#getting-information-of-your-cluster-s-nodes-computesets-etc" id="id5">Getting information of your cluster(s); nodes; computesets; etc.</a></li>
+<li><a class="reference internal" href="#power-management-of-frontend-node" id="id6">Power management of frontend node:</a></li>
+<li><a class="reference internal" href="#resource-allocation-and-tear-down" id="id7">Resource allocation and tear down:</a></li>
+<li><a class="reference internal" href="#power-management-of-compute-nodes" id="id8">Power management of compute nodes:</a></li>
+<li><a class="reference internal" href="#getting-console-access" id="id9">Getting Console access</a></li>
+<li><a class="reference internal" href="#system-image-management" id="id10">System image management</a></li>
+<li><a class="reference internal" href="#other-commands" id="id11">Other commands:</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>We developed a command line based client tool for users to access Comet
+VC easily and securely. The CLI is part of a larger effort called
+Cloudmesh Client toolkit, which provides command line and shell
+interface of accessing heterogeneous clouds, clusters, and workstations
+right from the users’ computers. By utilizing this client tool, Comet VC
+users can access all capabilities to manage their virtual cluster, while
+bypassing the security concerns and the complexity of programming with
+the Comet nucleus API.</p>
+<div class="section" id="teminology">
+<h2><a class="toc-backref" href="#id1">Teminology</a><a class="headerlink" href="#teminology" title="Permalink to this headline">¶</a></h2>
+<p>We use in this section the following terminology:</p>
+<dl class="docutils">
+<dt>computeset:</dt>
+<dd>A group of compute nodes started together and being in some state
+(submitted, started, finished, failed). Each compute node can only
+belong to 1 computesets in submitted or active state.</dd>
+<dt>frontend:</dt>
+<dd>A node with limited computational resources used to manage a
+virtual cluster. Frontends run 24/7, have a public interface and a
+private interface. The public interface provides outside access to
+the virtual cluster while the private interface is used to
+manage/install the compute nodes.</dd>
+<dt>image:</dt>
+<dd>A file containing the contents and structure (ISO9660) of a disk
+volume which can be attached as a cdrom to a node.</dd>
+<dt>console:</dt>
+<dd>An interactive representation of the screen of a virtual cluster
+node (text or graphical) provided to assist with node installation
+and management.</dd>
+<dt>virtual cluster:</dt>
+<dd>A virtual cluster is a loosely or tightly connected network of virtual
+computers managed together by a virtual cluster administrator.</dd>
+<dt>node:</dt>
+<dd>The term node is used to refer to individual computers in a
+virtual cluster.</dd>
+<dt>image attach:</dt>
+<dd>Attach is an action applied to a node / image pair whereby the
+contents of the image are made available to a node on the next
+power on.</dd>
+<dt>image detach:</dt>
+<dd>Detach is an action applied to a node / image pair whereby the
+contents of the image are made unavailable to the node on the next
+power on.</dd>
+</dl>
+</div>
+<div class="section" id="installation">
+<h2><a class="toc-backref" href="#id2">Installation</a><a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Cloudmesh Comet CLI is developed using Python. The installation is
+starightforward and easy:</p>
+<pre class="highlight"><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">pip install cloudmesh_client</span>
+</pre><p>Both Python 2.7 and 3.5 is supported. You are HIGHLY recommended to use
+a virtualenv based environment to install and use this toolkit.</p>
+</div>
+<div class="section" id="configuration">
+<h2><a class="toc-backref" href="#id3">Configuration</a><a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>The configuration of the cloudmesh client is done semi automatically
+for you.  All you have to do after the installation is to call
+cloudmesh client once.</p>
+<p>This is done best with the command:</p>
+<pre class="highlight"><span class="prompt1">cms <span class="nb">help</span></span>
+</pre><p>This will automatically generate a template configuration file at:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">~/.</span><span class="n">cloudmesh</span><span class="o">/</span><span class="n">cloudmesh</span><span class="o">.</span><span class="n">yaml</span>
+</pre></div>
+</div>
+<p>Next you can initiate the configuration file:</p>
+<pre class="highlight"><span class="prompt1">cms comet init</span>
+</pre><p>Follow the prompt to configure and select endpoint, and initialize the
+auth settings by provide your username and password. Once you are
+successfully authenticated it will retrieve the api key and secret and
+configure the cloudmesh.yaml with proper api auth information. Then you
+will be able to use the commands to manage your comet virtual cluster.</p>
+<p><strong>For the use of the Comet VC production system, you need to use the OTP
+generated by your assigned YubiKey. You need to have the key plugged in,
+and upon the request of your password, type your PIN first, and then tap
+your key.</strong></p>
+<p><strong>Console access of nodes requires 2-factor Auth as well, so please have
+your YubiKey ready for console access</strong></p>
+</div>
+<div class="section" id="commands">
+<h2><a class="toc-backref" href="#id4">Commands</a><a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<p>Comet CLI supports accessing multiple nucleus service endpoint, e.g.,
+DEV system or Production system. You will know which system to use after
+your VC is setup. To check which system you are currently accessing,
+run this:</p>
+<pre class="highlight"><span class="prompt1">cms comet active</span>
+</pre><p>Or change to another system to interact with, e.g.:</p>
+<pre class="highlight"><span class="prompt1">cms comet active production</span>
+</pre><p>Next we list a number of important commands from the CLI that will
+help you managing your comet virtual clusters.</p>
+<div class="section" id="getting-information-of-your-cluster-s-nodes-computesets-etc">
+<h3><a class="toc-backref" href="#id5">Getting information of your cluster(s); nodes; computesets; etc.</a><a class="headerlink" href="#getting-information-of-your-cluster-s-nodes-computesets-etc" title="Permalink to this headline">¶</a></h3>
+<p>List all clusters owned by the authenticated identity (summarized
+format):</p>
+<pre class="highlight"><span class="prompt1">cms comet ll</span>
+</pre><p>List all clusters owned by the authenticated identity (detailed
+list):</p>
+<pre class="highlight"><span class="prompt1">cms comet cluster</span>
+</pre><p>List a cluster by name (we use here vc2 as example):</p>
+<pre class="highlight"><span class="prompt1">cms comet cluster vc2</span>
+</pre><p>Cluster listing view also supports other output format, e.g. json,
+csv, etc.:</p>
+<pre class="highlight"><span class="prompt1">cms comet cluster vc2 --format<span class="o">=</span>csv</span>
+</pre><p>This can be useful for scripting.</p>
+<p>List all defined computesets:</p>
+<pre class="highlight"><span class="prompt1">cms comet computeset</span>
+</pre><p>List one computeset:</p>
+<pre class="highlight"><span class="prompt1">cms comet computeset <span class="m">63</span></span>
+</pre><p>To obtain the detailed information of a node:</p>
+<pre class="highlight"><span class="prompt1">cms comet node info vc2</span>
+</pre><p>Gives your the information of the vc2 frontnode. This includes essential
+network configuration information if you want to rebuild the frontend
+node.</p>
+<pre class="highlight"><span class="prompt1">cms comet node info vc2 vm-vc2-0</span>
+</pre><p>Gives the detailed information of the specified compute node.</p>
+<p>By default it returned information in a table format. It also accepts
+the –format=FROMAT parameter so the output can be easily parsed while
+being used in scripting (FORMAT could be one of csv, json, yaml).</p>
+</div>
+<div class="section" id="power-management-of-frontend-node">
+<h3><a class="toc-backref" href="#id6">Power management of frontend node:</a><a class="headerlink" href="#power-management-of-frontend-node" title="Permalink to this headline">¶</a></h3>
+<p>Power on the front end node of the specified cluster:</p>
+<pre class="highlight"><span class="prompt1">cms comet power on vc2</span>
+</pre><p>To power if off:</p>
+<pre class="highlight"><span class="prompt1">cms comet power off vc2</span>
+</pre><p>You can also reboot/reset/shutdown the fronend using the same
+syntax, e.g., to reboot:</p>
+<pre class="highlight"><span class="prompt1">cms comet power reboot vc2</span>
+</pre><p>Please note running frontend node itself would not charge you any
+allocations.</p>
+</div>
+<div class="section" id="resource-allocation-and-tear-down">
+<h3><a class="toc-backref" href="#id7">Resource allocation and tear down:</a><a class="headerlink" href="#resource-allocation-and-tear-down" title="Permalink to this headline">¶</a></h3>
+<p>The requested cluster/VMs has to be started by requesting physical
+allocations. This will charge your allocation based on number of
+nodes and the walltime you requested.</p>
+<p><strong>Please note that each VM you requested corresponds to 24 cores (You
+have the exclusive access to the whole physical node), thus one VM node
+hour is equivalent to 24 SUs. So please TERMINATE the resources (see
+below) if you don’t actively use them. Keeping them idle (even SHUT OFF)
+will still cost your allocation.</strong></p>
+<p><strong>Currently for the DEV resources you are not charged for any usage.
+Please use the DEV resource to develop/test your application/workflow,
+and move to the production for the actual usage. Please terminate the
+requested compute set(s) if you are not actively using them to free the
+resources so other users can use them as well.</strong></p>
+<p>Start a set of compute nodes in cluster vc2:</p>
+<pre class="highlight"><span class="prompt1">cms comet start vc2 vm-vc2-<span class="o">[</span><span class="m">0</span>-3<span class="o">]</span></span>
+</pre><p>This will request the nodes for a default period of time and power on
+them (currently default as 2 days).</p>
+<p>To request for a customized time period, use –walltime parameter.
+E.g., 100m (100 minutes), 6h (6 hours), 2d (2 days) , 1w (1 week):</p>
+<pre class="highlight"><span class="prompt1">cms comet start vc2 vm-vc2-<span class="o">[</span><span class="m">0</span>-3<span class="o">]</span> --walltime<span class="o">=</span>6h</span>
+</pre><p>The above will put the request under the one allocation associated
+with the cluster.  If your cluster have more than one allocations,
+use –allocation parameter:</p>
+<pre class="highlight"><span class="prompt1">cms comet start vc2 vm-vc2-<span class="o">[</span><span class="m">0</span>-3<span class="o">]</span> --allocation<span class="o">=</span>YOUR_ALLOCATION</span>
+</pre><p>If you have more allocations, but does not specify via CLI, you will
+see a list of allocations to choose from to use.</p>
+<p>You can also request a group of N nodes, if there is enough resource:</p>
+<pre class="highlight"><span class="prompt1">cms comet start vc2 --count<span class="o">=</span><span class="m">4</span></span>
+</pre><p>The comet system will find 4 available nodes from the specified
+cluster and start them as one computeset.</p>
+<p>You can also start a single-node computeset:</p>
+<pre class="highlight"><span class="prompt1">cms comet start vc2 vm-vc2-<span class="o">[</span><span class="m">7</span><span class="o">]</span></span>
+</pre><p>or simply:</p>
+<pre class="highlight"><span class="prompt1">cms comet start vc2 vm-vc2-7</span>
+</pre><p>To power down all running nodes from an active computeset and also
+free the allocated resources:</p>
+<pre class="highlight"><span class="prompt1">cms comet terminate <span class="m">123</span></span>
+</pre><p>This will gracefully shutdown the nodes in the group identified by
+computeset 123, and also free the unused allocations. A computeset
+will be teared down automatically when it reaches its requested
+walltime.</p>
+<p><strong>Please note you have to terminate the requested resources
+as such so it stops charging your account for the usage.</strong></p>
+</div>
+<div class="section" id="power-management-of-compute-nodes">
+<h3><a class="toc-backref" href="#id8">Power management of compute nodes:</a><a class="headerlink" href="#power-management-of-compute-nodes" title="Permalink to this headline">¶</a></h3>
+<p>You can power off and back on individual nodes from a cluster,
+without affecting other running nodes in the computesets. E.g.:</p>
+<pre class="highlight"><span class="prompt1">cms comet power off vc2 vm-vc2-<span class="o">[</span><span class="m">0</span>-7<span class="o">]</span></span>
+</pre><p>and then:</p>
+<pre class="highlight"><span class="prompt1">cms comet power on vc2 vm-vc2-<span class="o">[</span><span class="m">0</span>-7<span class="o">]</span></span>
+</pre><p>or shutdown gracefully a group of nodes:</p>
+<pre class="highlight"><span class="prompt1">cms comet power shutdown vc2 vm-vc2-<span class="o">[</span><span class="m">0</span>-3<span class="o">]</span></span>
+</pre><p>Please note even if you powered off all nodes from an active
+computeset, the computeset itself along with the associated physical
+resource is still active and can only be accessed exclusively by you
+till the requested walltime is reached. During this time you can
+freely power the nodes back on and off.</p>
+<p><strong>Please be reminded that your account will still be charged in this
+case until you terminate the computeset as described earlier.</strong></p>
+<p><strong>Please note that the node disks are persisted silently on the background
+periodically, or when you shut them off gracefully (‘cms comet terminate’
+or ‘cms comet power shutdown’). So the next time you start the node, or
+powered if on, you can start with where you have left.</strong></p>
+</div>
+<div class="section" id="getting-console-access">
+<h3><a class="toc-backref" href="#id9">Getting Console access</a><a class="headerlink" href="#getting-console-access" title="Permalink to this headline">¶</a></h3>
+<p>Get console of the frontend:</p>
+<pre class="highlight"><span class="prompt1">cms comet console vc2</span>
+</pre><p>Get console of a running compute node:</p>
+<pre class="highlight"><span class="prompt1">cms comet console vc2 vm-vc2-0</span>
+</pre><p><strong>Please note the console access requires 2-factor auth.</strong>
+The commands will ask your comet nucleus username (if not set previously)
+and password, and you will need your Yubikey for the access.</p>
+<p>Once you have passed this extra step of auth, it will print out a shortlived
+URL for accessing the console of the node requested. It will also pop open a
+browser window if a supported OS/browser is detected. In OSX it will use the
+system default browser to display the console; and in Linux environment it
+will try to use firefox.</p>
+<p>You can also get only the URL directly by calling:</p>
+<pre class="highlight"><span class="prompt1">cms comet console --link vc2</span>
+</pre></div>
+<div class="section" id="system-image-management">
+<h3><a class="toc-backref" href="#id10">System image management</a><a class="headerlink" href="#system-image-management" title="Permalink to this headline">¶</a></h3>
+<p>Get the list of images that are available to you:</p>
+<pre class="highlight"><span class="prompt1">cms comet iso list</span>
+</pre><p>Upload an image to the public shared folder:</p>
+<pre class="highlight"><span class="prompt1">cms comet iso upload /path/to/your/image.iso</span>
+</pre><p>Or with a specified new image name:</p>
+<pre class="highlight"><span class="prompt1">cms comet iso upload /path/to/your/image.iso --imagename<span class="o">=</span>newimagename.iso</span>
+</pre><p>Attach an image to the frontend, by specifying the exact image name, or the index
+of the image in the iso list:</p>
+<pre class="highlight"><span class="prompt1">cms comet iso attach newimagename.iso vc2</span>
+<span class="prompt1">cms comet iso attach <span class="m">6</span> vc2</span>
+</pre><p>Or to a compute node:</p>
+<pre class="highlight"><span class="prompt1">cms comet iso attach newimagename.iso vc2 vm-vc2-0</span>
+</pre><p>To detach the attached iso image from frontend node:</p>
+<pre class="highlight"><span class="prompt1">cms comet iso detach vc2</span>
+</pre><p>Or from a compute node:</p>
+<pre class="highlight"><span class="prompt1">cms comet iso detach vc2 vm-vc2-0</span>
+</pre><p>Image attaching/detaching also works on compute nodes in bulk:</p>
+<pre class="highlight"><span class="prompt1">cms comet iso attach newimagename.iso vc2 vm-vc2-<span class="o">[</span><span class="m">0</span>-4<span class="o">]</span></span>
+</pre><pre class="highlight"><span class="prompt1">cms comet iso detach vc2 vm-vc2-<span class="o">[</span><span class="m">0</span>-4<span class="o">]</span></span>
+</pre><p>Please note image attaching/detaching will only take effect <strong>AFTER you
+hard reboot the node (power off and then power on)</strong>.</p>
+</div>
+<div class="section" id="other-commands">
+<h3><a class="toc-backref" href="#id11">Other commands:</a><a class="headerlink" href="#other-commands" title="Permalink to this headline">¶</a></h3>
+<p>You can rename a compute node, or a list of nodes in batch:</p>
+<pre class="highlight"><span class="prompt1">cms comet node rename vc2 vm-vc2-0 mynode0</span>
+</pre><pre class="highlight"><span class="prompt1">cms comet node rename vc2 vm-vc2-<span class="o">[</span><span class="m">0</span>-7<span class="o">]</span> newname-<span class="o">[</span><span class="m">0</span>-7<span class="o">]</span></span>
+</pre><p>Please use hostlist format to specify the list of OLDNAMES AND NEWNAMES</p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Gregor von Laszewski, Fugang Wang.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
