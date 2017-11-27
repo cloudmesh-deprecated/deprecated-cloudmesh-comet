@@ -88,26 +88,25 @@ to what software stacks are going to be deployed. So it's suitable to your
 needs if you want a flexible and customized HPC environment that is totally
 managed by yourself.
 
-So for this scenarios:
+So for these scenarios:
 
-  If an existing XSEDE system can fit your needs, then comet VC might not be
-  necessary for you;
+* If an existing XSEDE system can fit your needs, then comet VC might not be necessary for you;
 
-  If what you need is one, or a few but unrelated VMs, then comet VC may not
+* If what you need is one, or a few but unrelated VMs, then comet VC may not
   be the best choice for you. You may look at other cloud based resources,
   e.g., Jetstream or Chameleon.
 
-  However if you need a cluster with HPC or bigdata needs, AND you want to
-  have an experience and performance close to what a physical resource provides,
-  AND you need a system with OS flavor and software stack totally determined
-  and managed by you, comet VC would be a good fit for you.
+However if you need a cluster with HPC or bigdata needs, AND you want to
+have an experience and performance close to what a physical resource provides,
+AND you need a system with OS flavor and software stack totally determined
+and managed by you, comet VC would be a good fit for you.
 
 
 Steps to get a virtual cluster on comet
 ---------------------------------------
 
 1. Obtain an allocation via XSEDE as documented at
-   https://www.xsede.org/allocations To get started quickly we
+   https://www.xsede.org/allocations. To get started quickly we
    recommend a trial allocation for comet as discussed here:
    https://portal.xsede.org/allocations/announcements#trial
 
@@ -245,12 +244,12 @@ I have the Comet YubiKey mixed up with my other keys. How can I find which one i
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Plug the key in and tap it into notepad or something similar. It will
-generate a string similar to this:
+generate a string similar to this::
 
-     geffgefe........................................
+    geffgefe........................................
 
- The beginning characters will help identify the key. All Comet VC keys
- should generate a string starting with these characters.
+The beginning characters will help identify the key. All Comet VC keys
+should generate a string starting with these characters.
 
 How do I get support?
 ~~~~~~~~~~~~~~~~~~~~~
