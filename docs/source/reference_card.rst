@@ -38,6 +38,8 @@ Comet
 +---------------------------------------+------------------------------------------------------------------------+
 | | cms comet cluster vc2               | | List a cluster by name (vc2)                                         |
 +---------------------------------------+------------------------------------------------------------------------+
+| | cms comet cluster vc2 --status      | | Display status info of the specified cluster (vc2)                   |
++---------------------------------------+------------------------------------------------------------------------+
 | | cms comet computeset                | | List all defined computesets                                         |
 +---------------------------------------+------------------------------------------------------------------------+
 | | cms comet computeset 63             | | Display one computeset by specifying the computeset                  |
@@ -58,8 +60,11 @@ Comet
 | |    --walltime=6h                    | | computeset, for a givenwalltime (30m, 3h, 2d, 1w, for                |
 | |                                     | | 30 minutes, 3 hours, 2 days, 1 week, respectively)                   |
 +---------------------------------------+------------------------------------------------------------------------+
-| | cms comet start vc4 vm-vc4-[0-3]    | | Start new set of compute nodes with allocation                       |
+| | cms comet start vc4 vm-vc4-[0-3]    | | Start a new set of compute nodes with allocation                     |
 | |    --allocation=YOUR_ALLOCATION     | |                                                                      |
++---------------------------------------+------------------------------------------------------------------------+
+| | cms comet start vc4 vm-vc4-[0-3]    | | Start a new set of compute nodes with the reserved resources.        |
+| |    --reservation==YOUR_RESERVATION  | | The reservation has to be requested from outside of cloudmesh.       |
 +---------------------------------------+------------------------------------------------------------------------+
 | | cms comet start vc4 vm-vc4-7        | | Start a one-node computeset                                          |
 +---------------------------------------+------------------------------------------------------------------------+
