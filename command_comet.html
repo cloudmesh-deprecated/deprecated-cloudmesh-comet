@@ -22,7 +22,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -254,6 +254,10 @@ list):</p>
 <pre class="highlight"><span class="prompt1">cms comet cluster</span>
 </pre><p>List a cluster by name (we use here vc2 as example):</p>
 <pre class="highlight"><span class="prompt1">cms comet cluster vc2</span>
+</pre><p>Display only part of the info of the specified cluster:</p>
+<pre class="highlight"><span class="prompt1">cms comet cluster vc2 --concise</span>
+</pre><p>Or display only the status info:</p>
+<pre class="highlight"><span class="prompt1">cms comet cluster vc2 --status</span>
 </pre><p>Cluster listing view also supports other output format, e.g. json,
 csv, etc.:</p>
 <pre class="highlight"><span class="prompt1">cms comet cluster vc2 --format<span class="o">=</span>csv</span>
@@ -321,7 +325,12 @@ cluster and start them as one computeset.</p>
 <pre class="highlight"><span class="prompt1">cms comet start vc2 vm-vc2-<span class="o">[</span><span class="m">7</span><span class="o">]</span></span>
 </pre><p>or simply:</p>
 <pre class="highlight"><span class="prompt1">cms comet start vc2 vm-vc2-7</span>
-</pre><p>To power down all running nodes from an active computeset and also
+</pre><p>To submit a computeset job to an existing reservation that you had
+requested beforehand, use –reservation parameter:</p>
+<pre class="highlight"><span class="prompt1">cms comet start vc2 vm-vc2-<span class="o">[</span><span class="m">0</span>-3<span class="o">]</span> --reservation<span class="o">=</span>YOUR_RESERVATION</span>
+</pre><p>At the moment you have to request a reservation outside of cloudmesh,
+e.g., via XSEDE ticket system.</p>
+<p>To power down all running nodes from an active computeset and also
 free the allocated resources:</p>
 <pre class="highlight"><span class="prompt1">cms comet terminate <span class="m">123</span></span>
 </pre><p>This will gracefully shutdown the nodes in the group identified by
@@ -416,7 +425,7 @@ hard reboot the node (power off and then power on)</strong>.</p>
     </p>
     <p>
         &copy; Copyright 2017, Gregor von Laszewski, Fugang Wang.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.<br/>
     </p>
   </div>
 </footer>

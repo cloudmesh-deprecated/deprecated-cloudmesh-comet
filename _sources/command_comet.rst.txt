@@ -155,6 +155,18 @@ List a cluster by name (we use here vc2 as example):
   
   cms comet cluster vc2
 
+Display only part of the info of the specified cluster:
+
+.. prompt:: bash
+
+  cms comet cluster vc2 --concise
+
+Or display only the status info:
+
+.. prompt:: bash
+
+  cms comet cluster vc2 --status
+
 Cluster listing view also supports other output format, e.g. json,
 csv, etc.:
 
@@ -286,6 +298,16 @@ or simply:
 .. prompt:: bash
 
     cms comet start vc2 vm-vc2-7
+
+To submit a computeset job to an existing reservation that you had
+requested beforehand, use --reservation parameter:
+
+.. prompt:: bash
+
+    cms comet start vc2 vm-vc2-[0-3] --reservation=YOUR_RESERVATION
+
+At the moment you have to request a reservation outside of cloudmesh,
+e.g., via XSEDE ticket system.
 
 To power down all running nodes from an active computeset and also
 free the allocated resources:

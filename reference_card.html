@@ -22,7 +22,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -212,6 +212,15 @@
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
+<div class="line">cms comet cluster vc2 –status</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Display status info of the specified cluster (vc2)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
 <div class="line">cms comet computeset</div>
 </div>
 </td>
@@ -220,7 +229,7 @@
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><div class="first last line-block">
+<tr class="row-even"><td><div class="first last line-block">
 <div class="line">cms comet computeset 63</div>
 <div class="line"><br /></div>
 </div>
@@ -231,7 +240,7 @@
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><div class="first last line-block">
+<tr class="row-odd"><td><div class="first last line-block">
 <div class="line">cms comet power on vc4</div>
 <div class="line"><br /></div>
 </div>
@@ -242,7 +251,7 @@
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><div class="first last line-block">
+<tr class="row-even"><td><div class="first last line-block">
 <div class="line">cms comet power off vc4</div>
 <div class="line"><br /></div>
 </div>
@@ -253,7 +262,7 @@
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><div class="first last line-block">
+<tr class="row-odd"><td><div class="first last line-block">
 <div class="line">cms comet start vc4 vm-vc4-[0-3]</div>
 <div class="line"><br /></div>
 </div>
@@ -264,7 +273,7 @@
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><div class="first last line-block">
+<tr class="row-even"><td><div class="first last line-block">
 <div class="line">cms comet start vc4 –count=4</div>
 </div>
 </td>
@@ -273,7 +282,7 @@
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><div class="first last line-block">
+<tr class="row-odd"><td><div class="first last line-block">
 <div class="line">cms comet start vc4 vm-vc4-[0-3]</div>
 <div class="line-block">
 <div class="line">–walltime=6h</div>
@@ -288,7 +297,7 @@
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><div class="first last line-block">
+<tr class="row-even"><td><div class="first last line-block">
 <div class="line">cms comet start vc4 vm-vc4-[0-3]</div>
 <div class="line-block">
 <div class="line">–allocation=YOUR_ALLOCATION</div>
@@ -296,8 +305,21 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Start new set of compute nodes with allocation</div>
+<div class="line">Start a new set of compute nodes with allocation</div>
 <div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line">cms comet start vc4 vm-vc4-[0-3]</div>
+<div class="line-block">
+<div class="line">–reservation==YOUR_RESERVATION</div>
+</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Start a new set of compute nodes with the reserved resources.</div>
+<div class="line">The reservation has to be requested from outside of cloudmesh.</div>
 </div>
 </td>
 </tr>
@@ -544,7 +566,7 @@
     </p>
     <p>
         &copy; Copyright 2017, Gregor von Laszewski, Fugang Wang.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.<br/>
     </p>
   </div>
 </footer>
