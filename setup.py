@@ -25,7 +25,7 @@ def readfile(filename):
 
 #requiers = readfile ('requirements.txt')
 requiers = """
-cloudmesh.cmd5
+cloudmesh-cmd5
 requests
 requests-toolbelt
 httpsig
@@ -37,11 +37,11 @@ pytz
 version = readfile("VERSION")[0].strip()
 readme = readfile('README.rst')
 
-NAME = "cloudmesh.comet"
+NAME = "cloudmesh-comet"
 DESCRIPTION = "A Command Line Client and Shell to Interact with Comet VC"
 AUTHOR = "Gregor von Laszewski"
 AUTHOR_EMAIL = "laszewski@gmail.com"
-URL = "https://github.com/cloudmesh/cloudmesh.comet"
+URL = "https://github.com/cloudmesh/cloudmesh-comet"
 LONG_DESCRIPTION = "\n".join(readme)
 
 

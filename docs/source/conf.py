@@ -55,7 +55,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'cloudmesh.comet'
+project = 'cloudmesh-comet'
 copyright = '2017, Gregor von Laszewski, Fugang Wang'
 author = 'Gregor von Laszewski, Fugang Wang'
 
@@ -112,7 +112,7 @@ html_logo = None
 # theme further.
 html_theme_options = {
     # Navigation bar title. (Default: ``project`` value)
-    'navbar_title': "cloudmesh.comet",
+    'navbar_title': "cloudmesh-comet",
 
     # Tab name for entire site. (Default: "Site")
     'navbar_site_name': "Site",
@@ -125,7 +125,7 @@ html_theme_options = {
     # Note the "1" or "True" value above as the third argument to indicate
     # an arbitrary url.
     'navbar_links': [
-        ("CMD5", "https://github.com/cloudmesh/cloudmesh.cmd5/blob/master/README.rst", True),
+        ("CMD5", "https://github.com/cloudmesh/cloudmesh-cmd5/blob/master/README.rst", True),
     ],
 
     # Render the next and previous page links in navbar. (Default: true)
@@ -224,7 +224,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'cloudmeshcomet.tex', 'cloudmesh.comet Documentation',
+    (master_doc, 'cloudmeshcomet.tex', 'cloudmesh-comet Documentation',
      'Gregor von Laszewski, Fugang Wang', 'manual'),
 ]
 
@@ -234,7 +234,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'cloudmeshcomet', 'cloudmesh.comet Documentation',
+    (master_doc, 'cloudmeshcomet', 'cloudmesh-comet Documentation',
      [author], 1)
 ]
 
@@ -245,7 +245,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'cloudmeshcomet', 'cloudmesh.comet Documentation',
+    (master_doc, 'cloudmeshcomet', 'cloudmesh-comet Documentation',
      author, 'cloudmeshcomet', 'One line description of project.',
      'Miscellaneous'),
 ]
