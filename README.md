@@ -1,4 +1,3 @@
-Documentation
-=============
+# Documentation
 
-* https://cloudmesh.github.io/cloudmesh.comet/
+* https://cloudmesh.github.io/cloudmesh-comet/
